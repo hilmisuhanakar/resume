@@ -1,0 +1,37 @@
+{
+    "Navigation":{
+        "experience": "Experience",
+        "education": "Education",
+        "skills": "Skills",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "PageTitles":{
+        "experience": "EXPERIENCE",
+        "education": "EDUCATION",
+        "skills": "SKILLS",
+        "projects": "PROJECTS",
+        "contact": "CONTACT"
+    },
+    "Contact":{
+        "name": "Name *",
+        "email": "Email *",
+        "message": "Message *",
+        "send": "Send"
+    },
+    "DownloadMenu":{
+        "download": "Download CV"
+    },
+    "ContactForm":{
+        "nameRequired": "Name is required",
+        "emailInvalid": "Email is invalid",
+        "emailRequired": "Email is required",
+        "messageRequired": "Message is required"
+    },
+    "ContactResponseMessage":{
+        "success": "Contact form sent successfully",
+        "error": "Contact form sending failed",
+        "turnstileVerificationFailed": "Turnstile verification failed. Please try again.",
+        "tooManyAttempts": "Too many attempts. Please try again later."
+    }
+}

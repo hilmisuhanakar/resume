@@ -1,0 +1,1 @@
+ALTER TABLE "skills" ADD COLUMN "order_number" smallint NOT NULL;
