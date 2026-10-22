@@ -6,8 +6,8 @@ import { getTranslations } from "next-intl/server";
 export default async function Banner({ locale, meData }) {
     const t = await getTranslations("Navigation");
     return (
-        <section id=""
-            className="relative md:h-[calc(100vh-101px)]  bg-[url('/banner.png')] bg-cover 2xl:bg-cover bg-center  px-5 py-16 flex items-center justify-center overflow-clip"
+        <section id="hakkimda"
+            className="relative md:h-[calc(100vh-101px)]  bg-[url('/banner.jpg')] bg-cover 2xl:bg-cover bg-center  px-5 py-16 flex items-center justify-center overflow-clip"
         >
             {/* Background overlay */}
             <div className="absolute inset-0 bg-white/70" />
@@ -21,7 +21,7 @@ export default async function Banner({ locale, meData }) {
                     <div className="min-h-100 md:min-h-137.5 bg-white/70">
                         <Image
                             src="/me.png"
-                            alt="Hilmi Sühan Akar"
+                            alt={`${meData.name} - ${meData.title}`}
                             fill
                             priority
                             className="object-cover grayscale-50"
@@ -67,11 +67,11 @@ export default async function Banner({ locale, meData }) {
                 </SlideIn>
                 <SlideIn direction="up" className="md:col-span-2">
                     <div className="min-h-20 bg-primary md:mt-5 flex items-center justify-center gap-5">
-                        <a href={meData.linkedin} target="_blank" rel="noopener noreferrer" className="hover:cursor-pointer hover: hover:scale-110">
-                            <FaLinkedin color="white" size={50} aria-label="Linkedin" title="Linkedin"></FaLinkedin>
+                        <a href={meData.linkedin} target="_blank" rel="me noopener noreferrer" aria-label="LinkedIn" className="hover:cursor-pointer hover: hover:scale-110">
+                            <FaLinkedin color="white" size={50} aria-hidden="true"></FaLinkedin>
                         </a>
-                        <a href={meData.github} target="_blank" rel="noopener noreferrer" className="hover:cursor-pointer hover: hover:scale-110">
-                            <FaGithub color="white" size={50} aria-label="Github" title="Github"></FaGithub>
+                        <a href={meData.github} target="_blank" rel="me noopener noreferrer" aria-label="GitHub" className="hover:cursor-pointer hover: hover:scale-110">
+                            <FaGithub color="white" size={50} aria-hidden="true"></FaGithub>
                         </a>
                     </div>
                 </SlideIn>

@@ -16,9 +16,9 @@ export default async function Contact({ locale, meData }) {
                     <div className="w-full p-7 md:w-[33.5%] md:py-10">
                             <SlideIn direction="down" className="flex flex-col gap-10">
                                 <div>
-                                    <h2 className="text-4xl font-semibold text-primary tracking-[3px]">
+                                    <h3 className="text-4xl font-semibold text-primary tracking-[3px]">
                                         {meData.name}
-                                    </h2>
+                                    </h3>
                                     <p className="text-primary font-light">{meData.title}</p>
                                 </div>
                                 <div>

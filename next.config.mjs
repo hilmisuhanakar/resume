@@ -5,8 +5,20 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   cacheComponents: true,
+  experimental: {
+    globalNotFound: true,
+  },
   async headers() {
     return [
+      {
+        source: "/:path*.pdf",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, nofollow, noarchive, nosnippet",
+          },
+        ],
+      },
       {
         source: "/(.*)",
         headers: [
