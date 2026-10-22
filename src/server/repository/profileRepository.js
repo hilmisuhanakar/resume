@@ -58,7 +58,6 @@ export async function deleteProfileRepository(id) {
 }
 
 export async function getMeInfoRepository(locale) {
-    console.log("getMeInfoRepository", locale);
     const result = await db.select({
         name: profile.name,
         title: profile.title,

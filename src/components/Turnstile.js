@@ -1,11 +1,10 @@
 "use client";
 
 import Script from "next/script";
-import { useLocale } from "next-intl";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export default function Turnstile({ onVerify }) {
-    const locale = useLocale();
+export default function Turnstile({ locale = 'tr', onVerify }) {
+    const [lang] = useState(locale);
     const containerRef = useRef(null);
     const widgetIdRef = useRef(null);
 
@@ -17,7 +16,7 @@ export default function Turnstile({ onVerify }) {
         widgetIdRef.current = window.turnstile.render(containerRef.current,
             {
                 sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
-                language: locale,
+                language: lang,
                 callback: (token) => {
                     onVerify(token);
                 },
@@ -34,11 +33,6 @@ export default function Turnstile({ onVerify }) {
     }
 
     useEffect(() => {
-        if (window.turnstile && widgetIdRef.current !== null) {
-            window.turnstile.remove(widgetIdRef.current);
-            widgetIdRef.current = null;
-        }
-
         renderTurnstile();
 
         return () => {
@@ -46,8 +40,9 @@ export default function Turnstile({ onVerify }) {
                 window.turnstile.remove(widgetIdRef.current);
                 widgetIdRef.current = null;
             }
-        };
-    }, [locale]);
+        }
+
+    }, [lang]);
 
     return (
         <>

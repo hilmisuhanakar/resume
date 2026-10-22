@@ -89,7 +89,7 @@ export default function ContactForm({ locale }) {
                         className="flex items-center justify-center gap-2 border border-primary text-white text-lg p-3 bg-primary hover:cursor-pointer hover:bg-white transition-all duration-300">{tLabels("send")}
                         {isPending && <Loader2 className="w-6 h-6 animate-spin" />}
                     </button>
-                    <Turnstile onVerify={token => {
+                    <Turnstile locale={locale} onVerify={token => {
                         setVerified(true);
                         formik.setFieldValue("turnstileToken", token, false);
                     }}
