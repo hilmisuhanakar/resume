@@ -10,7 +10,7 @@ export default async function Skills({locale}) {
             <section id="yetenekler" className="scroll-mt-27 lg:scroll-mt-25.25 overflow-clip">
                 <div className="hidden md:flex flex-col items-center justify-center bg-primary">
                     <div className="w-full min-h-px bg-[#CEF549]"></div>
-                    <div className="text-2xl py-10 font-bold text-white">{t("skills")}</div>
+                    <h2 className="text-2xl py-10 font-bold text-white">{t("skills")}</h2>
                     <div className="w-full min-h-px bg-[#CEF549]"></div>
                     <div className="relative mx-auto py-10">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-center">
@@ -24,7 +24,7 @@ export default async function Skills({locale}) {
                 </div>
                 <div className="md:hidden flex flex-col items-center justify-center bg-primary">
                     <div className="w-screen min-h-px bg-[#CEF549]"></div>
-                    <div className="text-2xl py-10 font-bold text-white">{t("skills")}</div>
+                    <h2 className="text-2xl py-10 font-bold text-white">{t("skills")}</h2>
                     <div className="w-screen min-h-px bg-[#CEF549]"></div>
                     <div className="relative mx-auto py-10">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center items-center">

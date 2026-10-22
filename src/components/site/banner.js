@@ -61,12 +61,6 @@ export default async function Banner({ locale, meData }) {
                                     {t("contact")}
                                 </a>
 
-                                <a
-                                    href="#projects"
-                                    className="border border-black px-6 py-3 transition hover:bg-black hover:text-white"
-                                >
-                                    {t("projects")}
-                                </a>
                             </div>
                         </article>
                     </div>
@@ -74,10 +68,10 @@ export default async function Banner({ locale, meData }) {
                 <SlideIn direction="up" className="md:col-span-2">
                     <div className="min-h-20 bg-primary md:mt-5 flex items-center justify-center gap-5">
                         <a href={meData.linkedin} target="_blank" rel="noopener noreferrer" className="hover:cursor-pointer hover: hover:scale-110">
-                            <FaLinkedin color="white" size={50}></FaLinkedin>
+                            <FaLinkedin color="white" size={50} aria-label="Linkedin" title="Linkedin"></FaLinkedin>
                         </a>
                         <a href={meData.github} target="_blank" rel="noopener noreferrer" className="hover:cursor-pointer hover: hover:scale-110">
-                            <FaGithub color="white" size={50}></FaGithub>
+                            <FaGithub color="white" size={50} aria-label="Github" title="Github"></FaGithub>
                         </a>
                     </div>
                 </SlideIn>

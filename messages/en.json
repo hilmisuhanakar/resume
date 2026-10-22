@@ -1,4 +1,8 @@
 {
+    "Metadata":{
+        "title": "Hilmi Sühan Akar | Full-Stack Software Developer",
+        "description": "Portfolio of Hilmi Sühan Akar, a Full-Stack Software Developer specializing in .NET, C#, Next.js and PostgreSQL. Antalya, Türkiye."
+    },
     "Navigation":{
         "experience": "Experience",
         "education": "Education",

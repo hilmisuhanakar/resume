@@ -46,17 +46,17 @@ export default function Header({ activeId }) {
         <>
             <header className="sticky top-0 w-full z-1">
                 {/* desktop */}
-                <nav className="hidden lg:flex justify-between items-center py-7 px-20 bg-primary  shadow-xs shadow-[#CEF549] ">
+                <nav aria-label="Main navigation" className="hidden lg:flex justify-between items-center py-7 px-20 bg-primary  shadow-xs shadow-[#CEF549] ">
                     <h3 className="lg:text-[30px] text-white">Hilmi Sühan Akar</h3>
                     <div className="flex items-center gap-6">
                         {menuItems.map((item, index) => (
                             <Link href={item.href} key={index}>
-                                <h3
+                                <span
                                     className={`text-[16px] text-white transition-colors ${item.href === `#${activeId}` ? "underline underline-offset-4 decoration-[#CEF549]" : ""}
                                         }`}
                                 >
                                     {t(item.label)}
-                                </h3>
+                                </span>
                             </Link>
                         ))}
                         <LanguageSwitcher />
@@ -64,7 +64,7 @@ export default function Header({ activeId }) {
                     </div>
                 </nav>
                 {/* mobile */}
-                <nav className="lg:hidden flex top-0 z-1 justify-between items-center py-8 px-5 bg-primary shadow-xs shadow-[#CEF549] ">
+                <nav aria-label="Mobile navigation" className="lg:hidden flex top-0 z-1 justify-between items-center py-8 px-5 bg-primary shadow-xs shadow-[#CEF549] ">
                     <h3 className="text-[21px] text-white">Hilmi Sühan Akar</h3>
                     <div className="flex items-center justify-end gap-6">
                         <div className="flex items-center gap-7">

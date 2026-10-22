@@ -7,6 +7,10 @@ import Loading from "./loading";
 export const metadata = {
     title: "Admin Panel",
     description: "Admin Panel",
+    robots: {
+        index: false,
+        follow: false,
+    }
 }
 
 export default async function Layout({ children }) {

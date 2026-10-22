@@ -8,7 +8,7 @@ export default function TimeLine({ data, title, elementId, locale }) {
         <section id={elementId} className="bg-gray-100 flex flex-col items-center justify-center scroll-mt-27 lg:scroll-mt-25.25 overflow-clip">
 
             <div className="w-full min-h-px bg-[#CEF549]"></div>
-            <div className="text-2xl py-10 font-bold text-primary">{t(title)}</div>
+            <h2 className="text-2xl py-10 font-bold text-primary">{t(title)}</h2>
             <div className="w-full min-h-px bg-[#CEF549]"></div>
 
             <div className="relative max-w-4xl mx-auto py-10">
@@ -25,9 +25,9 @@ export default function TimeLine({ data, title, elementId, locale }) {
                             {/* Sol taraf */}
                             <SlideIn direction="left">
                                 <div className="text-right">
-                                    <h3 className="font-semibold tracking-[3px] text-primary">
+                                    <time className="font-semibold tracking-[3px] text-primary">
                                         {item.date}
-                                    </h3>
+                                    </time>
 
                                     <p className="mt-3 tracking-[3px] text-primary">
                                         {item.position}

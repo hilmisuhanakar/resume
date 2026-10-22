@@ -9,7 +9,7 @@ export default async function Home({ params }) {
   const { locale } = await params;
   const meData = await getMeInfoAction(locale);
   return (
-    <>
+    <main>
       <Banner locale={locale} meData={meData} />
       <Experience locale={locale} />
       <Education locale={locale} />
@@ -17,6 +17,6 @@ export default async function Home({ params }) {
       <footer>
         <Contact locale={locale} meData={meData} />
       </footer>
-    </>
+    </main>
   );
 }
