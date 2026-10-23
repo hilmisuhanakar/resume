@@ -22,7 +22,7 @@ export default function DownloadMenu({ isOpenDownload, setIsOpenDownload }) {
                     <ul className="text-black space-y-4 py-2">
                         {files.map((file) => (
                             <li key={file.name}>
-                                <a href={file.href} download className="flex items-center p-1 gap-2 text-primary hover:underline">
+                                <a href={file.href} download className="flex items-center p-1 gap-2 text-primary hover:underline  hover:bg-white/10">
                                     <FaFilePdf className="text-[16px] text-red-600" />
                                     <span className="text-white">{file.name}</span>
                                 </a>
