@@ -3,39 +3,52 @@
         "title": "Hilmi Sühan Akar | Full-Stack Software Developer",
         "description": ".NET, C#, Next.js ve PostgreSQL teknolojileriyle web uygulamaları geliştiren Hilmi Sühan Akar'ın özgeçmişi, deneyimleri ve teknik yetkinlikleri. Antalya, Türkiye."
     },
-    "Navigation":{
+    "Navigation": {
         "experience": "Deneyim",
         "education": "Eğitim",
         "skills": "Yetenekler",
         "projects": "Projeler",
         "contact": "İletişim"
     },
-    "PageTitles":{
+    "PageTitles": {
         "experience": "DENEYİM",
         "education": "EĞİTİM",
         "skills": "YETENEKLER",
         "projects": "PROJELER",
         "contact": "İLETİŞİM"
     },
-    "Contact":{
+    "Contact": {
         "name": "Adınız *",
         "email": "Email *",
         "message": "Mesaj *",
         "send": "Gönder"
     },
-    "DownloadMenu":{
+    "DownloadMenu": {
         "download": "CV İndir"
     },
-    "ContactForm":{
+    "ContactForm": {
         "nameRequired": "Adınız zorunludur",
         "emailInvalid": "Email geçersiz",
         "emailRequired": "Email zorunludur",
         "messageRequired": "Mesaj zorunludur"
     },
-    "ContactResponseMessage":{
+    "ContactResponseMessage": {
         "success": "İletişim formu başarıyla gönderildi",
         "error": "İletişim formu gönderimi başarısız oldu",
         "turnstileVerificationFailed": "Turnstile doğrulama başarısız oldu. Lütfen tekrar deneyiniz.",
         "tooManyAttempts": "Çok fazla deneme yapıldı. Lütfen daha sonra tekrar deneyiniz."
+    },
+    "Footer": {
+        "title": "Yazılım Geliştirici",
+        "description": "Modern, güvenli ve performans odaklı web uygulamaları geliştiriyorum.",
+        "navigation": "Hızlı Bağlantılar",
+        "experience": "Deneyim",
+        "education": "Eğitim",
+        "skills": "Yetenekler",
+        "contact": "İletişim",
+        "email": "E-posta",
+        "backToTop": "Yukarı dön",
+        "rights": "Tüm hakları saklıdır.",
+        "builtWith": "Next.js ile geliştirildi."
     }
 }

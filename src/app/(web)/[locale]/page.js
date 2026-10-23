@@ -6,6 +6,7 @@ import Contact from "@/components/site/contact";
 import { getMeInfoAction } from "@/server/actions/profile.action";
 import { getSkillsAction } from "@/server/actions/skill.action";
 import { getMessages } from "next-intl/server";
+import Footer from "@/components/site/footer";
 
 export default async function Home({ params }) {
   const { locale } = await params;
@@ -67,9 +68,8 @@ export default async function Home({ params }) {
       <Experience locale={locale} />
       <Education locale={locale} />
       <Skills locale={locale} skills={skills} />
-      <footer>
-        <Contact locale={locale} meData={meData} />
-      </footer>
+      <Contact locale={locale} meData={meData} />
+      <Footer locale={locale} meData={meData} />
     </main>
   );
 }

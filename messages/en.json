@@ -1,41 +1,54 @@
 {
-    "Metadata":{
+    "Metadata": {
         "title": "Hilmi Sühan Akar | Full-Stack Software Developer",
         "description": "Portfolio of Hilmi Sühan Akar, a Full-Stack Software Developer specializing in .NET, C#, Next.js and PostgreSQL. Antalya, Türkiye."
     },
-    "Navigation":{
+    "Navigation": {
         "experience": "Experience",
         "education": "Education",
         "skills": "Skills",
         "projects": "Projects",
         "contact": "Contact"
     },
-    "PageTitles":{
+    "PageTitles": {
         "experience": "EXPERIENCE",
         "education": "EDUCATION",
         "skills": "SKILLS",
         "projects": "PROJECTS",
         "contact": "CONTACT"
     },
-    "Contact":{
+    "Contact": {
         "name": "Name *",
         "email": "Email *",
         "message": "Message *",
         "send": "Send"
     },
-    "DownloadMenu":{
+    "DownloadMenu": {
         "download": "Download CV"
     },
-    "ContactForm":{
+    "ContactForm": {
         "nameRequired": "Name is required",
         "emailInvalid": "Email is invalid",
         "emailRequired": "Email is required",
         "messageRequired": "Message is required"
     },
-    "ContactResponseMessage":{
+    "ContactResponseMessage": {
         "success": "Contact form sent successfully",
         "error": "Contact form sending failed",
         "turnstileVerificationFailed": "Turnstile verification failed. Please try again.",
         "tooManyAttempts": "Too many attempts. Please try again later."
+    },
+    "Footer": {
+        "title": "Software Developer",
+        "description": "I build modern, secure and performance-focused web applications.",
+        "navigation": "Quick Links",
+        "experience": "Experience",
+        "education": "Education",
+        "skills": "Skills",
+        "contact": "Contact",
+        "email": "Email",
+        "backToTop": "Back to top",
+        "rights": "All rights reserved.",
+        "builtWith": "Built with Next.js."
     }
 }

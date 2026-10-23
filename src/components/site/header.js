@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { FaArrowUp, FaDownload } from "react-icons/fa";
 import LanguageSwitcher from "./language-switcher";
-import DownloadMenu from "./download-menu";
+
 export default function Header({ activeId }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -60,7 +60,6 @@ export default function Header({ activeId }) {
                             </Link>
                         ))}
                         <LanguageSwitcher />
-                        <DownloadMenu isOpenDownload={isOpenDownload} setIsOpenDownload={setIsOpenDownload} />
                     </div>
                 </nav>
                 {/* mobile */}
@@ -68,7 +67,6 @@ export default function Header({ activeId }) {
                     <span className="text-[21px] text-white">Hilmi Sühan Akar</span>
                     <div className="flex items-center justify-end gap-6">
                         <div className="flex items-center gap-7">
-                            <DownloadMenu isOpenDownload={isOpenDownload} setIsOpenDownload={setIsOpenDownload} />
 
                             <button type="button" aria-label="Menu" aria-expanded={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)} className={`top-5 right-5 text-white border border-[#CEF549] rounded-full p-2 bg-primary ${isMenuOpen ? 'bg-gray-600/70 z-3' : ''}`}>
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
