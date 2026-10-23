@@ -1,11 +1,12 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
-import {getMessages} from "next-intl/server";
+import { getMessages } from "next-intl/server";
 import "@/app/globals.css";
 import ActiveSectionProvider from "@/components/site/active-section-provider"
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { routing } from "@/i18n/routing";
+import Script from "next/script";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -28,57 +29,57 @@ export async function generateMetadata({ params }) {
   const isTurkish = locale === "tr";
 
   const canonicalUrl = isTurkish
-      ? BASE_URL
-      : `${BASE_URL}/${locale}`;
+    ? BASE_URL
+    : `${BASE_URL}/${locale}`;
 
   return {
-      metadataBase: new URL(BASE_URL),
-      authors: [{ name: "Hilmi Sühan Akar",  url: `${BASE_URL}/${locale}` }],
-      creator: "Hilmi Sühan Akar",
-      publisher: "Hilmi Sühan Akar",
-      keywords: ["Hilmi Sühan Akar", "Full-Stack Software Developer", "C#", ".NET", "Next.js", "PostgreSQL", "Software Developer", "Software Engineer", "Software Architect", "Antalya", "Freelancer", "Freelance Software Developer"],
-      applicationName: "Hilmi Sühan Akar",
-      
+    metadataBase: new URL(BASE_URL),
+    authors: [{ name: "Hilmi Sühan Akar", url: canonicalUrl }],
+    creator: "Hilmi Sühan Akar",
+    publisher: "Hilmi Sühan Akar",
+    keywords: ["Hilmi Sühan Akar", "Full-Stack Software Developer", "C#", ".NET", "Next.js", "PostgreSQL", "Software Developer", "Software Engineer", "Software Architect", "Antalya", "Freelancer", "Freelance Software Developer"],
+    applicationName: "Hilmi Sühan Akar",
+
+    title: messages.Metadata.title,
+    description: messages.Metadata.description,
+
+    alternates: {
+      canonical: canonicalUrl,
+
+      languages: {
+        "tr-TR": BASE_URL,
+        "en-US": `${BASE_URL}/en`,
+        "x-default": BASE_URL,
+      },
+    },
+
+    openGraph: {
+      type: "profile",
+      locale: isTurkish ? "tr_TR" : "en_US",
+      alternateLocale: isTurkish ? ["en_US"] : ["tr_TR"],
+      url: canonicalUrl,
+      siteName: "Hilmi Sühan Akar",
       title: messages.Metadata.title,
       description: messages.Metadata.description,
+    },
 
-      alternates: {
-          canonical: canonicalUrl,
+    twitter: {
+      card: "summary_large_image",
+      title: messages.Metadata.title,
+      description: messages.Metadata.description,
+    },
 
-          languages: {
-              "tr-TR": BASE_URL,
-              "en-US": `${BASE_URL}/en`,
-              "x-default": BASE_URL,
-          },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
       },
-
-      openGraph: {
-          type: "profile",
-          locale: isTurkish ? "tr_TR" : "en_US",
-          alternateLocale: isTurkish ? ["en_US"] : ["tr_TR"],
-          url: canonicalUrl,
-          siteName: "Hilmi Sühan Akar",
-          title: messages.Metadata.title,
-          description: messages.Metadata.description,
-      },
-
-      twitter: {
-          card: "summary_large_image",
-          title: messages.Metadata.title,
-          description: messages.Metadata.description,
-      },
-
-      robots: {
-          index: true,
-          follow: true,
-          googleBot: {
-              index: true,
-              follow: true,
-              "max-image-preview": "large",
-              "max-snippet": -1,
-              "max-video-preview": -1,
-          },
-      },
+    },
   };
 }
 
@@ -90,14 +91,34 @@ export default async function RootLayout({ children, params }) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   const messages = await getMessages();
+  const gtmId = process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID;
+
   return (
     <html
       lang={locale}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased scroll-smooth motion-reduce:scroll-auto`}
     >
       <body>
+        {gtmId && (
+          <>
+            <noscript>
+              <iframe
+                src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+                height="0"
+                width="0"
+                style={{ display: "none", visibility: "hidden" }}
+              />
+            </noscript>
+            <Script id="gtm" strategy="afterInteractive">
+              {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${gtmId}');`}
+            </Script>
+          </>
+        )}
         <NextIntlClientProvider messages={messages}>
-          
           <ActiveSectionProvider>
             {children}
           </ActiveSectionProvider>
